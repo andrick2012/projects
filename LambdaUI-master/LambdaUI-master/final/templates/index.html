@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+input[type=text], input[type=password] {
+  padding: 12px 20px;  
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #F7931E;
+  color: black;
+  padding: 14px 20px;  
+  border: none;
+  cursor: pointer;
+  font-weight: 900;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+.imgcontainer {
+  text-align: center;
+  
+}
+
+img.avatar {
+  width: 10%;
+  height: 10%;
+  border-radius: 40%;
+}
+label{
+
+margin-left: 48%;
+
+}
+div.container {
+  padding: 16px;
+  text-align: : center;
+}
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+</style>
+</head>
+<body>
+
+<form action="http://localhost:5000/home" method="post" style="margin-top: 10%;">
+  <div class="imgcontainer">
+    <img src="{{ url_for('static', filename = 'Lambda-ConvertImage.png') }}" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+    <label for="hname"><b>Host Name</b></label>
+    <br>
+    <input type="text" placeholder="Enter Host" style="margin:0px auto; display:block; width: 30%;" value = {{ host }} name="hname" required>
+    <br>
+    <label for="uname"><b>User Name</b></label>
+    <br>
+    <input type="text" placeholder="Enter Username" style="margin:0px auto; display:block; width: 30%;" value = {{uName}} name="uname" required>
+    <br>
+    <label for="psw"><b>Password</b></label>
+    <br>
+    <input type="password" placeholder="Enter Password"  style="margin:0px auto; display:block; width: 30%;" value = {{passCode}} name="psw" required>  
+    <br>      
+    <button type="submit" style="margin:0px auto; display:block; width: 30%;">Connect</button>
+  </div>
+</form>
+
+</body>
+</html>
